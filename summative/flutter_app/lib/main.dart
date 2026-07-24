@@ -10,7 +10,7 @@ class EnergyApp extends StatelessWidget {
   const EnergyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) {   
     return MaterialApp(
       title: 'IoT Energy Predictor',
       debugShowCheckedModeBanner: false,
@@ -31,7 +31,6 @@ class PredictionPage extends StatefulWidget {
 }
 
 class _PredictionPageState extends State<PredictionPage> {
-  // ----- API endpoint (swap in your own Render URL) -----
   static const String apiUrl =
       'https://ghana-pm25-api.onrender.com/predict';
 
@@ -202,8 +201,9 @@ class _PredictionPageState extends State<PredictionPage> {
         title: const Text('IoT Edge-Device Energy Predictor'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(20),
+      body: SafeArea(
+        child: SingleChildScrollView(
+        padding: const EdgeInsets.fromLTRB(20, 20, 20, 40),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -322,6 +322,7 @@ class _PredictionPageState extends State<PredictionPage> {
               ),
           ],
         ),
+      ),
       ),
     );
   }

@@ -24,7 +24,7 @@ from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
-# Load trained artifacts (saved by the notebook in Task 1)
+# Load trained artifacts (saved by the notebook)
 HERE = os.path.dirname(os.path.abspath(__file__))
 model = joblib.load(os.path.join(HERE, "best_model.pkl"))
 scaler = joblib.load(os.path.join(HERE, "scaler.pkl"))
@@ -51,12 +51,9 @@ app = FastAPI(
     version="1.0.0",
 )
 
-# --------------------------------------------------------------------------- #
-# CORS middleware — deliberately not a wildcard.
 # Only the origins that call this API are allowed (Flutter dev server / localhost).
 # Methods limited to GET/POST/OPTIONS (OPTIONS needed for browser preflight).
 # Headers limited to Content-Type (JSON only). Credentials off — no auth cookies.
-# --------------------------------------------------------------------------- #
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
