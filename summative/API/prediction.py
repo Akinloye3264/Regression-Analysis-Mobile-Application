@@ -1,17 +1,17 @@
-"""
-IoT Edge-Device Energy Prediction API
-Serves the trained Random Forest model (Task 1) over HTTP.
 
-Endpoints
----------
-GET  /            -> health check / basic info
-POST /predict     -> predict energy consumption (mJ) from device state
-POST /retrain     -> upload new telemetry (CSV) and retrain the model
+# IoT Edge-Device Energy Prediction API
+# Serves the trained Random Forest model (Task 1) over HTTP.
 
-Run locally:
-    uv run uvicorn prediction:app --reload
-Docs (Swagger UI):  http://127.0.0.1:8000/docs
-"""
+# Endpoints
+# ---------
+# GET  /            -> health check / basic info
+# POST /predict     -> predict energy consumption (mJ) from device state
+# POST /retrain     -> upload new telemetry (CSV) and retrain the model
+
+# Run locally:
+#     uv run uvicorn prediction:app --reload
+# Docs (Swagger UI):  http://127.0.0.1:8000/docs
+
 
 import io
 import os
