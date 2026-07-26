@@ -21,7 +21,7 @@ Example request body:
 ```
 
 # Video Demo
-**YouTube <https://youtu.be/gdBrs4-314A?si=Zq16gJw4AixXYGQ1>
+YouTube- https://youtu.be/gdBrs4-314A?si=Zq16gJw4AixXYGQ1
 
 # Running the Mobile App
 1. Install Flutter and confirm the Android toolchain: `flutter doctor`.
@@ -57,5 +57,5 @@ Best model (lowest test RMSE) is saved and served by the API.
 summative/
 ├── linear_regression/multivariate.ipynb   # data, EDA, 4 models, best-model saving
 ├── API/prediction.py                       # FastAPI (predict + retrain, CORS, Pydantic)
-└── FlutterApp/                             # main.dart -> flutter_app/lib/main.dart
+└── flutter_app/                             # main.dart -> flutter_app/lib/main.dart
 ```
